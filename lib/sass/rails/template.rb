@@ -20,6 +20,7 @@ module Sprockets
 File.open('/tmp/hoge','w') { |f| f.puts('pioi') }
       sass_config = context.environment.context_class.sass_config.merge(options)
       ::Sass::Engine.new(data, sass_config).render
+      ''
     rescue ::Sass::SyntaxError => e
       context.__LINE__ = e.sass_backtrace.first[:line]
       raise e
